@@ -13,8 +13,8 @@ try {
         }
     )
     
-    window.autopilotJsonp()
+    window.autopilotJsonp('worked at ' + new Date())
 } catch (e) {
-    window.autopilotJsonp(e)
+    window.autopilotJsonp(null, e)
 }
 
