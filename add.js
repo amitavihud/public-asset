@@ -13,7 +13,9 @@ try {
         }
     )
     
-    window.autopilotJsonp('worked at ' + new Date())
+    window.autopilotJsonp({
+        migratedPages: [documentServices.pages.getCurrentPage()]
+    })
 } catch (e) {
     window.autopilotJsonp(null, e)
 }
