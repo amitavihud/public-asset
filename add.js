@@ -9,7 +9,7 @@ try {
         {id: window.autopilotPayload.componentId, type: 'DESKTOP'},
         {
             ...data,
-            text: '<h3 class=\font_3\>' + window.autopilotPayload.value + '</h3>',
+            text: '<h3 class="font_5">' + window.autopilotPayload.value + '</h3>',
         }
     )
     
