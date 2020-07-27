@@ -14,7 +14,8 @@ try {
     )
     
     window.autopilot.jsonp({
-        migratedPages: [documentServices.pages.getCurrentPage()]
+        migratedPages: [documentServices.pages.getCurrentPage()],
+        isPublished: window.autopilot.isPublishedRevision
     })
 } catch (e) {
     window.autopilot.jsonp(null, e)
