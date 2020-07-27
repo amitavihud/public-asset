@@ -1,22 +1,19 @@
 
 try {
-    if (window.autopilot.payload.throwErrorMessage) {
-        throw new Error(window.autopilot.payload.throwErrorMessage)
-    }
+    const isPublished = window.autopilot.isPublishedRevision
 
-    const data = documentServices.components.data.get({id: window.autopilot.payload.componentId, type: 'DESKTOP' })
+    const componentId = window.autopilot.payload.componentId
+    const value = window.autopilot.payload.value
+
     documentServices.components.data.update(
-        {id: window.autopilot.payload.componentId, type: 'DESKTOP'},
+        {id: componentId, type: 'DESKTOP'},
         {
-            ...data,
-            text: '<h3 class="font_5">' + window.autopilot.payload.value + '</h3>',
+            ...documentServices.components.data.get({ id: componentId, type: 'DESKTOP' }),
+            text: '<h3 class="font_5">' + value + '</h3>',
         }
     )
     
-    window.autopilot.jsonp({
-        migratedPages: [documentServices.pages.getCurrentPage()],
-        isPublished: window.autopilot.isPublishedRevision
-    })
+    window.autopilot.jsonp(`This was a simple jsonp migration on the ${isPublished ? 'published' : 'last saved'} revision`)
 } catch (e) {
     window.autopilot.jsonp(null, e)
 }
