@@ -13,8 +13,8 @@ try {
         }
     )
     
-    window.autopilot.jsonp(`This was a simple jsonp migration on the ${isPublished ? 'published' : 'last saved'} revision`)
+    window.autopilot.reportResult(`This was a simple jsonp migration on the ${isPublished ? 'published' : 'last saved'} revision`)
 } catch (e) {
-    window.autopilot.jsonp(null, e)
+    window.autopilot.reportError(e)
 }
 
