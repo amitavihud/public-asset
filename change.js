@@ -9,13 +9,7 @@ try {
 
     window.autopilot.log('updating component label')
 
-    documentServices.components.data.update(
-        {id: componentId, type: 'DESKTOP'},
-        {
-            ...documentServices.components.data.get({ id: componentId, type: 'DESKTOP' }),
-            text: '<h3 class="font_5">' + value + '</h3>',
-        }
-    )
+    documentServices.components.data.update({id: componentId, type: 'DESKTOP'}, {text: `<h3 class="font_5">${value}</h3>`})
     
     window.autopilot.log('end script')
 
