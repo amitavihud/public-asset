@@ -1,4 +1,3 @@
-
 try {
     const isPublished = window.autopilot.isPublishedRevision
 
