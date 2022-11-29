@@ -9,7 +9,7 @@ try {
 
     window.autopilot.log('updating component label')
 
-    documentServices.components.data.update({ id: componentId, type: 'DESKTOP' }, { text: `<h3 class="font_5">${value} made by ${window.documentServicesModel.userInfo.email}</h3>`})
+    documentServices.components.data.update({ id: componentId, type: 'DESKTOP' }, { text: `<h3 class="font_5">${value} made by ${window.documentServicesModel.userInfo.email} editorModel.isImpersonated: ${window.parent.editorModel.isImpersonated}</h3>`})
     
     window.autopilot.log('end script')
 
